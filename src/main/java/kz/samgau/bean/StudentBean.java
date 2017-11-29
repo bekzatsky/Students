@@ -130,6 +130,7 @@ public class StudentBean implements Serializable {
             connection = getConnection();
             PreparedStatement stmt = connection.prepareStatement("delete from students where id = "+id);
             stmt.executeUpdate();
+            connection.close();
         }catch(Exception e){
             System.out.println(e);
         }
